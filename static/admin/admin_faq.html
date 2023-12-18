@@ -29,7 +29,8 @@
         <nav class="navbar navbar-expand bg-dark sb-topnav navbar-dark" id="app-navbar">
             <div class="container-fluid"><button class="btn btn-link btn-sm link-light order-md-1" id="sidebarToggle" type="button"><i class="fa fa-bars" style="font-size: 20px;"></i></button><a class="navbar-brand" href="../index.html"><img src="../assets/img/logo%20EIM%20shadowed.png" style="margin-right: 10px;border-width: 3px;border-style: solid;border-radius: 8px;" width="89" height="48">CIDERE</a>
                 <form class="d-none d-md-inline-block order-2 ms-auto me-0 me-md-3 my-2 my-md-0">
-                    <div class="input-group"><input class="form-control" type="text" placeholder="Buscar ...">
+                    <div class="input-group" style="visibility: hidden;">
+                        <input class="form-control" type="text" placeholder="Buscar ...">
                         <div class="input-group-append"><button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button></div>
                     </div>
                 </form>
@@ -86,7 +87,7 @@
                         </div>
                     </div>
                     <div class="sb-sidenav-footer">
-                        <div class="small"><span>Conectado como : [Usuario]</span></div>
+                        <div class="small"><span>Conectado como : [Admin]</span></div>
                     </div>
                 </div>
             </div>
@@ -104,9 +105,15 @@
                             <div class="card shadow">
                                 <div class="card-header d-flex flex-wrap justify-content-center align-items-center justify-content-sm-between gap-3">
                                     <h5 class="display-6 text-nowrap text-capitalize mb-0">Preguntas frecuentes</h5>
-                                    <div class="input-group input-group-sm w-auto"><input class="form-control form-control-sm" type="text" placeholder="Buscar..."><button class="btn btn-outline-primary btn-sm" type="button"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-search mb-1">
+                                    <div class="input-group input-group-sm w-auto">
+                                        <input class="form-control form-control-sm" type="text" placeholder="Buscar..." id="searchInput">
+                                        <button class="btn btn-outline-primary btn-sm" type="button">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-search mb-1">
                                                 <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-                                            </svg></button></div><button class="btn btn-primary btn-agregar-faq" type="button" data-bs-target="#modal-1" data-bs-toggle="modal">Agregar</button>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <button class="btn btn-primary btn-agregar-faq" type="button" data-bs-target="#modal-1" data-bs-toggle="modal">Agregar</button>
                                 </div>
                                 <div class="card-body">
                                     <div class="table-responsive">
@@ -139,7 +146,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="modal fade" role="dialog" tabindex="-1" id="modal-1" data-id-faq="">
+                    <div class="modal fade" role="dialog" tabindex="-1" id="modal-1" data-id-faq="" data-id-db="">
                         <div class="modal-dialog modal-lg" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">

@@ -270,27 +270,36 @@
         <main>
             <div id="lightJumbo" class="col-md-8 p-5 mb-4 bg-light rounded-3" style="width: 100%;font-family: 'Noto Sans Indic Siyaq Numbers', sans-serif;">
                 <div class="container text-center py-5 border rounded-3">
-                    <h1 class="display-4 fw-bold">Comentarios</h1><button class="btn btn-primary" type="button" style="border-radius: 48px;font-size: 26px;background: rgb(28,119,252);font-family: 'Noto Sans Inscriptional Pahlavi', sans-serif;font-weight: bold;width: 187.75px;border-width: 0px;" data-bs-target="#modal-1" data-bs-toggle="modal">Valorar Servicio</button>
+                    <h1 class="display-4 fw-bold">Comentarios</h1>
+                    <button class="btn btn-primary" type="button" style="border-radius: 48px;font-size: 26px;background: rgb(28,119,252);font-family: 'Noto Sans Inscriptional Pahlavi', sans-serif;font-weight: bold;width: 187.75px;border-width: 0px;" data-bs-target="#modal-1" data-bs-toggle="modal">Valorar Servicio</button>
                     <div class="modal fade border rounded" role="dialog" tabindex="-1" id="modal-1" data-bs-theme="dark">
                         <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                                 <div class="modal-header">
-                                    <h4 class="modal-title text-primary-emphasis">Deje su comentario y puntuación</h4><button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
+                                    <h4 class="modal-title text-primary-emphasis">Deje su comentario y puntuación</h4>
+                                    <button class="btn-close" type="button" aria-label="Close" data-bs-dismiss="modal"></button>
                                 </div>
-                                <div class="modal-body d-grid"><textarea class="form-control-lg" placeholder="Escriba su testimonio" rows="6" name="areaReview" autofocus="" spellcheck="true" wrap="soft" required="" maxlength="180" data-bs-theme="dark" resize="none"></textarea>
-                                    <div id="contador-palabras"><span id="actual">0</span><span id="maximo">/ 180</span></div><span class="star-rating">
-                      <input type="radio" name="rating1" value="1">
-                      <i></i>
-                      <input type="radio" name="rating1" value="2">
-                      <i></i>
-                      <input type="radio" name="rating1" value="3">
-                      <i></i>
-                      <input type="radio" name="rating1" value="4">
-                      <i></i>
-                      <input type="radio" name="rating1" value="5" data-com.bitwarden.browser.user-edited="yes">
-                      <i></i> </span>
+                                <div class="modal-body d-grid">
+                                    <textarea class="form-control-lg" placeholder="Escriba su testimonio" rows="6" name="areaReview" autofocus="" spellcheck="true" wrap="soft" required="" maxlength="180" data-bs-theme="dark" resize="none"></textarea>
+                                    <div id="contador-palabras">
+                                        <span id="actual">0</span>
+                                        <span id="maximo">/ 180</span>
+                                    </div>
+                                    <span class="star-rating">
+                                        <input type="radio" name="rating1" value="1">
+                                        <i></i>
+                                        <input type="radio" name="rating1" value="2">
+                                        <i></i>
+                                        <input type="radio" name="rating1" value="3">
+                                        <i></i>
+                                        <input type="radio" name="rating1" value="4">
+                                        <i></i>
+                                        <input type="radio" name="rating1" value="5" data-com.bitwarden.browser.user-edited="yes">
+                            <i></i> </span>
                                 </div>
-                                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Cerrar</button><button class="btn btn-primary" type="button">Guardar</button></div>
+                                <div class="modal-footer"><button class="btn btn-light" type="button" data-bs-dismiss="modal">Cerrar</button>
+                                    <button class="btn btn-primary btn-comentario" type="button">Guardar</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -306,35 +315,40 @@
     <div class="carousel-inner py-4">
         <div class="carousel-item active">
             <div class="container">
+                <div class="row nuevo-testimonio">
+                    <div class="col-lg-4"><img class="rounded-circle shadow-1-strong mb-4" src="https://img.freepik.com/free-photo/large-truck-carrying-sand-platinum-mining-site-africa_181624-60189.jpg?w=1060&t=st=1700078584~exp=1700079184~hmac=2a27fabc9ba96ffa95c3912d1d526d1a26dec35c434d5d708000bf9db28e4004" alt="avatar" style="width: 150px;" />
+                        <h5 class="mb-3">CMP</h5>
+                        <p class="text-muted"><i class="fas fa-quote-left pe-2"></i> La empresa minera XYZ de Coquimbo, Chile, elogia a su proveedor minero ABC por su excepcional trabajo y compromiso. ABC ha demostrado ser un socio valioso, superando constantemente nuestras expectativas con su eficiencia operativa y dedicación. Su enfoque innovador ha impulsado significativamente nuestros proyectos, consolidando su posición como líder en la industria minera regional. </p>
+                        <ul class="list-unstyled text-warning d-inline-flex justify-content-center mb-0">
+                            <li><i class="fas fa-star fa-sm"></i></li>
+                            <li><i class="fas fa-star fa-sm"></i></li>
+                            <li><i class="fas fa-star fa-sm"></i></li>
+                            <li><i class="fas fa-star fa-sm"></i></li>
+                            <li><i class="fas fa-star fa-sm"></i></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-4 d-none d-lg-block">
+                        <img class="rounded-circle shadow-1-strong mb-4" src="https://pm.portalminero.com/images/noticias/5ddfb4124eb8d.jpg" alt="avatar" style="width: 150px;" />
+                        <h5 class="mb-3">LOS PELAMBRES</h5>
+                        <p class="text-muted"><i class="fas fa-quote-left pe-2"></i> En Coquimbo, Chile, la minera LMN destaca el rendimiento excepcional de su proveedor minero, XYZ. La colaboración con XYZ ha sido clave para el éxito de nuestros proyectos mineros, gracias a su profesionalismo y cumplimiento de los más altos estándares de calidad. Su experiencia y dedicación han marcado la diferencia en nuestra operación, generando resultados notables. </p>
+                        <ul class="list-unstyled text-warning d-inline-flex justify-content-center mb-0">
+                            <li><i class="fas fa-star fa-sm"></i></li>
+                            <li><i class="fas fa-star fa-sm"></i></li>
+                            <li><i class="fas fa-star fa-sm"></i></li>
+                            <li><i class="fas fa-star fa-sm"></i></li>
+                            <li><i class="fas fa-star fa-sm"></i></li>
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <div class="container">
                 <div class="row">
-                    <div class="col-lg-4"><img class="rounded-circle shadow-1-strong mb-4" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(1).webp" alt="avatar" style="width: 150px;" />
-                        <h5 class="mb-3">Anna Deynah</h5>
-                        <p>UX Designer</p>
-                        <p class="text-muted"><i class="fas fa-quote-left pe-2"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur. </p>
-                        <ul class="list-unstyled text-warning d-inline-flex justify-content-center mb-0">
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 d-none d-lg-block"><img class="rounded-circle shadow-1-strong mb-4" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(32).webp" alt="avatar" style="width: 150px;" />
-                        <h5 class="mb-3">John Doe</h5>
-                        <p>Web Developer</p>
-                        <p class="text-muted"><i class="fas fa-quote-left pe-2"></i> Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi. </p>
-                        <ul class="list-unstyled text-warning d-inline-flex justify-content-center mb-0">
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star-half-alt fa-sm"></i></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 d-none d-lg-block"><img class="rounded-circle shadow-1-strong mb-4" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(10).webp" alt="avatar" style="width: 150px;" />
-                        <h5 class="mb-3">Maria Kate</h5>
-                        <p>Photographer</p>
-                        <p class="text-muted"><i class="fas fa-quote-left pe-2"></i> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti. </p>
+                    <div class="col-lg-4 d-none d-lg-block"><img class="rounded-circle shadow-1-strong mb-4" src="https://i0.wp.com/mineriaydesarrollo.com/wp-content/uploads/2020/12/Chile-expectativas-2021.jpg?resize=364%2C225&ssl=1" alt="avatar" style="width: 150px;" />
+                        <h5 class="mb-3">PECK</h5>
+                        <p class="text-muted"><i class="fas fa-quote-left pe-2"></i> La minera ABC en Coquimbo, Chile, elogia a su proveedor minero de confianza, LMN, por su destacado desempeño. LMN ha sido un socio estratégico fundamental en nuestras operaciones, aportando soluciones innovadoras y un compromiso inquebrantable con la excelencia. Su habilidad para adaptarse a desafíos complejos ha fortalecido nuestra asociación, posicionándolos como un referente en la industria minera regional. </p>
                         <ul class="list-unstyled text-warning d-inline-flex justify-content-center mb-0">
                             <li><i class="fas fa-star fa-sm"></i></li>
                             <li><i class="fas fa-star fa-sm"></i></li>
@@ -343,27 +357,8 @@
                             <li><i class="far fa-star fa-sm"></i></li>
                         </ul>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="carousel-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4"><img class="rounded-circle shadow-1-strong mb-4" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(3).webp" alt="avatar" style="width: 150px;" />
-                        <h5 class="mb-3">John Doe</h5>
-                        <p>UX Designer</p>
-                        <p class="text-muted"><i class="fas fa-quote-left pe-2"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur. </p>
-                        <ul class="list-unstyled text-warning d-flex justify-content-center mb-0">
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-4 d-none d-lg-block"><img class="rounded-circle shadow-1-strong mb-4" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(4).webp" alt="avatar" style="width: 150px;" />
+                    <div class="col-lg-4 d-none d-lg-block"><img class="rounded-circle shadow-1-strong mb-4" src="https://www.revistatecnicosmineros.com/wp-content/uploads/2017/01/peru-camion.jpg" alt="avatar" style="width: 150px;" />
                         <h5 class="mb-3">Alex Rey</h5>
-                        <p>Web Developer</p>
                         <p class="text-muted"><i class="fas fa-quote-left pe-2"></i> Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid commodi. </p>
                         <ul class="list-unstyled text-warning d-flex justify-content-center mb-0">
                             <li><i class="fas fa-star fa-sm"></i></li>
@@ -373,25 +368,14 @@
                             <li><i class="fas fa-star-half-alt fa-sm"></i></li>
                         </ul>
                     </div>
-                    <div class="col-lg-4 d-none d-lg-block"><img class="rounded-circle shadow-1-strong mb-4" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(5).webp" alt="avatar" style="width: 150px;" />
-                        <h5 class="mb-3">Maria Kate</h5>
-                        <p>Photographer</p>
-                        <p class="text-muted"><i class="fas fa-quote-left pe-2"></i> At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti. </p>
-                        <ul class="list-unstyled text-warning d-flex justify-content-center mb-0">
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="fas fa-star fa-sm"></i></li>
-                            <li><i class="far fa-star fa-sm"></i></li>
-                        </ul>
-                    </div>
+                    
                 </div>
             </div>
         </div>
         <div class="carousel-item">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-4"><img class="rounded-circle shadow-1-strong mb-4" src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img%20(6).webp" alt="avatar" style="width: 150px;" />
+                    <div class="col-lg-4"><img class="rounded-circle shadow-1-strong mb-4" src="https://www.elobservatodo.cl/sites/elobservatodo.cl/files/imagen_noticia/mineria_0.jpeg" alt="avatar" style="width: 150px;" />
                         <h5 class="mb-3">Anna Deynah</h5>
                         <p>UX Designer</p>
                         <p class="text-muted"><i class="fas fa-quote-left pe-2"></i> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod eos id officiis hic tenetur quae quaerat ad velit ab hic tenetur. </p>
@@ -506,7 +490,7 @@
             </div>
         </footer>
     </section>
-    <section id="floating-buttons"><a data-bs-toggle="tooltip" data-bss-tooltip="" id="msg-link" class="floatlink" href="chat.html" title="Mensajes"><span class="badge" id="notificacion-msg">5</span><i class="typcn typcn-messages"></i></a><a data-bs-toggle="modal" data-bss-tooltip="" id="admin-estado" class="floatlink" title="Progreso" data-bs-target="#modal-progreso"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -32 576 576" width="1em" height="1em" fill="currentColor">
+    <section id="floating-buttons"><a data-bs-toggle="tooltip" data-bss-tooltip="" id="msg-link" class="floatlink" href="chatminera.html" title="Mensajes"><span class="badge" id="notificacion-msg">5</span><i class="typcn typcn-messages"></i></a><a data-bs-toggle="modal" data-bss-tooltip="" id="admin-estado" class="floatlink" title="Progreso" data-bs-target="#modal-progreso"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -32 576 576" width="1em" height="1em" fill="currentColor">
                 <!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. -->
                 <path d="M160 256C160 185.3 217.3 128 288 128C358.7 128 416 185.3 416 256C416 326.7 358.7 384 288 384C217.3 384 160 326.7 160 256zM288 336C332.2 336 368 300.2 368 256C368 211.8 332.2 176 288 176C287.3 176 286.7 176 285.1 176C287.3 181.1 288 186.5 288 192C288 227.3 259.3 256 224 256C218.5 256 213.1 255.3 208 253.1C208 254.7 208 255.3 208 255.1C208 300.2 243.8 336 288 336L288 336zM95.42 112.6C142.5 68.84 207.2 32 288 32C368.8 32 433.5 68.84 480.6 112.6C527.4 156 558.7 207.1 573.5 243.7C576.8 251.6 576.8 260.4 573.5 268.3C558.7 304 527.4 355.1 480.6 399.4C433.5 443.2 368.8 480 288 480C207.2 480 142.5 443.2 95.42 399.4C48.62 355.1 17.34 304 2.461 268.3C-.8205 260.4-.8205 251.6 2.461 243.7C17.34 207.1 48.62 156 95.42 112.6V112.6zM288 80C222.8 80 169.2 109.6 128.1 147.7C89.6 183.5 63.02 225.1 49.44 256C63.02 286 89.6 328.5 128.1 364.3C169.2 402.4 222.8 432 288 432C353.2 432 406.8 402.4 447.9 364.3C486.4 328.5 512.1 286 526.6 256C512.1 225.1 486.4 183.5 447.9 147.7C406.8 109.6 353.2 80 288 80V80z"></path>
             </svg></a><a data-bs-toggle="modal" data-bss-tooltip="" id="conexiones-link" class="floatlink" title="Conexiones" data-bs-target="#modal-conexiones"><span class="badge" id="notificacion-conexion">3</span><svg xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" height="1em" viewBox="0 0 24 24" width="1em" fill="currentColor">
@@ -755,6 +739,7 @@
     <script src="assets/js/proveedor/chat.js"></script>
     <script src="assets/js/proveedor/conectar.js"></script>
     <script src="assets/js/proveedor/contador-palabras.js"></script>
+    <script src="assets/js/proveedor/carousel-estrella.js"></script>
 </body>
 
 </html>

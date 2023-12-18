@@ -335,6 +335,7 @@
                           height: 2rem;
                           border-radius: 15px;
                           background: #00db5f;
+                          visibility: hidden;
                         "
                         >1</span
                       >
@@ -354,6 +355,7 @@
                           height: 2rem;
                           border-radius: 15px;
                           background: #00db5f;
+                          visibility: hidden;
                         "
                         >1</span
                       >
@@ -375,6 +377,7 @@
                           height: 2rem;
                           border-radius: 15px;
                           background: #00db5f;
+                          visibility: hidden;
                         "
                         >10</span
                       >
@@ -492,13 +495,13 @@
           }
 
           if(document.getElementById("chat-title").innerHTML === "LOS PELAMBRES"){
-            console.log("pelambres");
+            
             openChat(2)
             
           }
 
           if(document.getElementById("chat-title").innerHTML === "TECK"){
-            
+          
               openChat(3)
             
             
@@ -508,7 +511,10 @@
 
 
       // Función para cambiar el contenido del chat al hacer clic en un botón
+
+      
       function openChat(chatId) {
+        
         
         selectedChat = chats.find((chat) => chat.id === chatId);
         const chat_content = document.getElementById("chat");
@@ -527,173 +533,26 @@
         chatTitleElement.textContent = selectedChat.name;
 
 
-        
+        chatTitleElement.textContent = selectedChat.name;
+
+        // Inicia la carga constante de mensajes cada 5 segundos (puedes ajustar el intervalo según tus necesidades)
+        // messageLoader = setInterval(() => {
+        //   cargarMensajes(selectedChat);
+        // }, 5000); // 5000 milisegundos = 5 segundos
 
 
         
 
-    //     if (document.getElementById("chat-section") != null) {
-
-            
-
-    //         const localStorageData = {};
-
-    //         for (var i = 0; i < localStorage.length; i++) {
-
-    //             const key = localStorage.key(i);
-    //             const value = localStorage.getItem(key);
-    //             localStorageData[key] = JSON.parse(value);
-    //         }
-    //         try{
-    //             if(localStorageData[chatId.toString()].messages.length >0){
-    //             console.log("ESTE ES EL IMPORTANTE: "+JSON.stringify(localStorageData[chatId.toString()].mesagges));
-    //             var nuevoElementoLi = document.createElement("li");
-    //             var mensaje = JSON.stringify(localStorageData[chatId.toString()].mesagges)
-                
-    //             nuevoElementoLi.classList.add("d-flex", "justify-content-end", "my-2");
-
-    //              // Crear el HTML del nuevo div y establecerlo como el contenido del nuevo li
-    //              nuevoElementoLi.innerHTML = `
-    //              <div class="card border border-muted" style="width: 65%;border-top-left-radius: 0px;border-top-right-radius: 20px;border-bottom-right-radius: 20px;border-bottom-left-radius: 20px;background: rgba(52,58,64,0.05);">
-    //                                 <div class="card-body text-center p-2">
-    //                                     <p class="text-start card-text" style="font-size: 1rem;">${mensaje}</p>
-    //                                     <h6 class="text-muted card-subtitle text-end" style="font-size: .75rem;">Julio 22, 2021. 12:33 P.M.</h6>
-    //                                 </div>
-    //                             </div>
-    // `;
-
-                
-    //             console.log("estoy dentro"); 
-                            
-    //             // Obtener el elemento "chat" y agregar el nuevo elemento li a su contenido
-    //             var chat = document.getElementById("chat");
-    //             console.log(chat);
-    //             chat.appendChild(nuevoElementoLi);
-            
-                
-    //             //selectedChat.messages = localStorageData[chatId.toString()].mesagges;
-    //             }
-    //         }catch(e){
-                
-    //         }
-            
-    //     //console.log("Test: "+JSON.stringify(localStorageData["2"].mesagges));
-    //       // if(localStorage.getItem(selectedChat.toString()) != null){
-    //       //     var json = localStorage.getItem(chatId);
-    //       //     var chat_data = JSON.parse(json);
-    //       //     console.log(chat_data.messages);
-    //       // }
-
-    //       //for (var i = 0; i < chats.length; i++) {
-    //       // Convertir cada objeto a una cadena JSON
-
-    //       var json = JSON.stringify(selectedChat);
-    //       //console.log(json);
-    //       localStorage.setItem(selectedChat.id.toString(), json);
-          
-
-  
-
-          //console.log(document.getElementById('chat'))
-
-         // document.getElementById("chat-section").remove();
-        // } else {
-          //agregarDiv(selectedChat.name, chatId);
-          //localStorage.clear();
-
-          // const chatUserElement = document.getElementById('chat-user');
-          //const chat_messages = document.getElementById("chat");
-
-          
-
-          // Actualiza el título del chat con el nombre del usuario
-
-          //console.log(chatTitleElement.textContent)
-          //chatTitleElement.textContent = selectedChat.name;
-
-          // Limpia el contenido del chat
-          //console.log(chatContentElement.textContent)
-          
-
-          //     // Crea elementos para mostrar el historial de mensajes del chat
-          //     const chatHistory = document.createElement('ul');
-          //     chatHistory.classList.add('list-unstyled');
-
-          //     selectedChat.messages.forEach(message => {
-          //     const listItem = document.createElement('li');
-          //     listItem.textContent = `${message.sender}: ${message.text}`;
-          //     chatHistory.appendChild(listItem);
-          // });
-
-          // Agrega el historial de mensajes al contenido del chat
-          //chatContentElement.appendChild(chatHistory);
-
-          // Muestra la interfaz del chat
-          // chatTitleElement.style.display = 'flex';
-          //chat_messages.style.display = 'block';
-       // }
-      }
-
-      // document.addEventListener('DOMContentLoaded', () => {
-      //     const chatButtons = document.querySelectorAll('.chat-box li')
-      //     chatButtons.forEach(button => {
-      //         button.addEventListener('click', () => {
-      //             const chatId = button.dataset.chatId;
-      //             openChat(parseInt(chatId));
-      //         });
-      //     });
-      // });
-    </script>
-
-    <script>
-        //VERSION CASI ESTABLE
-      function agregarDiv(titulo, chatId) {
-        // Crear el nuevo div
-        //localStorage.clear();
-       var nuevoDiv = document.createElement("chat-section");
-        nuevoDiv.className =
-          "col d-none d-sm-none d-md-none d-lg-block d-xl-block";
-        nuevoDiv.id = "chat-section";
-
-        // Conten ido del nuevo div
-        nuevoDiv.innerHTML =
-          `
-        <div class="row">
-            <div class="col d-flex align-items-lg-center align-items-xl-center border-start border-muted" style="background: rgba(52,58,64,0.2);height: rem;">
-                <button class="btn d-block d-sm-block d-md-block d-lg-none d-xl-none border-0 my-auto" type="button" style="width: 2.5rem;height: 2.5rem;"><i class="far fa-arrow-alt-circle-left"></i></button>
-                <h5 id="chat-title" class="mr-auto my-auto">` +
-          titulo +
-          `</h5>
-                <span class="my-auto"><i class="fas fa-info-circle"></i></span>
-                <div class="m-auto buttons">
-                    <button class="trato-cerrar" type="button">Cerrar trato</button>
-                    <button class="trato-denegar" type="button">Denegar</button>
-                </div>
-            </div>
-        </div>
-        <div id="PRUEBA" class="row px-3 py-2 border-start border-muted" style="height: 12cm;">
-            <div class="col" style="overflow-x: none;overflow-y: auto;max-height: 30.5rem;height: auto;">
-                <ul id="chat" class="list-unstyled" style="background-color: red";>
-                
-                </ul>
-            </div>
-        </div>
-        <div class="row px-3 py-2" style="background: rgba(52, 58, 64, 0.46);position: sticky;bottom: 0;">
-            <div class="col-9 col-sm-10 col-md-10 col-lg-10 col-xl-10" style="padding: 0; overflow: hidden;">
-                <textarea id="messageInput" class="h-100 border-100" style="border-radius: 0px; width: 113%; resize: none;"></textarea>
-            </div>
-            <div class="col-3 col-sm-2 col-md-2 col-lg-2 col-xl-2 text-nowrap d-md-flex justify-content-md-end p-0">
-                <button class="btn btn-dark h-100 w-auto boton_enviar" type="button" onClick="recuperarTexto(${chatId})" style="border-radius: 10px;"><i class="fab fa-telegram-plane"></i></button>
-            </div>
-        </div>
-    `;
-
+        }
+      // Llamada a closeChat cuando el usuario cierra el chat
+      // Esto es solo un ejemplo, asegúrate de llamar a esta función cuando sea apropiado en tu código.
+      // Puedes hacerlo en un evento de cierre de chat o según tu lógica.
       
-        // Obtener el contenedor específico y agregar el nuevo div
-        var otroContenedor = document.getElementById("columna-chat");
-        otroContenedor.appendChild(nuevoDiv);
-      }
+
+    
     </script>
+
+    
 
     
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>

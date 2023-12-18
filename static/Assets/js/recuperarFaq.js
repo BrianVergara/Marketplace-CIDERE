@@ -25,6 +25,20 @@ $(document).ready(function () {
                     </tr>`;
                 adminTable.append(rowHtml);
             });
+
+            // Manejar el evento de cambio en el input de búsqueda
+            $('#searchInput').on('input', function () {
+                // Obtener el valor del input de búsqueda
+                let searchTerm = $(this).val().toLowerCase();
+                console.log(searchTerm);
+
+                // Filtrar las filas de la tabla según el término de búsqueda
+                $('.admin-faq-table tbody tr').each(function () {
+                    let rowText = $(this).text().toLowerCase();
+                    // Mostrar u ocultar la fila según si contiene el término de búsqueda
+                    $(this).toggle(rowText.includes(searchTerm));
+                });
+            });
             
 
             // Manejo de datos para la página en general (modal)
@@ -40,6 +54,9 @@ $(document).ready(function () {
                     </div>`;
                 generalAccordion.append(accordionHtml);
             });
+
+            // Inicializa los tooltips después de agregar dinámicamente las filas
+            $('[data-bs-toggle="tooltip"]').tooltip();
         },
         error: function (error) {
             console.log(error);
@@ -59,15 +76,27 @@ $(document).ready(function () {
         let pregunta = $('#modal-1 .data-pregunta').val();
         let respuesta = $('#modal-1 textarea').val();
 
+        // Valida que los campos no estén vacíos
+        if (pregunta == '' || respuesta == '') {
+            // sweetalert2
+            Swal.fire({
+                icon: 'error',
+                title: 'No se realizaron cambios',
+                text: 'Por favor, rellene todos los campos'
+            });
+            return;
+        }
+
         if (modoEdicion) {
             // Realiza la solicitud PUT al servicio web para editar
             // Realiza la solicitud PUT al servicio web
 
             // Obtén el ID del FAQ que deseas editar
             let idFaq = $('#modal-1').attr('data-id-faq');
+            let idFaq2 = $('#modal-1').attr('data-id-db');
 
             $.ajax({
-                url: "http://paredes.myddns.me:5000/faq/" + idFaq, // Reemplaza con la URL y el ID del FAQ específico
+                url: "http://paredes.myddns.me:5000/faq/" + idFaq2, // Reemplaza con la URL y el ID del FAQ específico
                 type: 'PUT',
                 contentType: 'application/json',
                 data: JSON.stringify({
@@ -79,7 +108,7 @@ $(document).ready(function () {
                     console.log(response);
 
                     // Actualiza la fila de la tabla
-                    let fila = $(`#admin-faq-table tbody tr #${idFaq}`).closest('tr');
+                    let fila = $(`.admin-faq-table tbody tr .data-id:contains('${idFaq}')`).closest('tr');
                     fila.find('.data-pregunta').text(pregunta);
                     fila.find('.data-respuesta').text(respuesta);
 
@@ -118,11 +147,14 @@ $(document).ready(function () {
                     let idFaq = $('.admin-faq-table tbody tr:last-child .data-id').text();
                     idFaq = parseInt(idFaq) + 1;
 
+                    // Obtener nuevo ID de la base de datos
+                    let idFaq2 = response.preguntaId;
+
                     // Agrega una nueva fila a la tabla
                     let adminTable = $('.admin-faq-table tbody');
                     let rowHtml = `
                         <tr>
-                            <td class="text-truncate data-id" style="max-width: 200px;" data-id-faq="${idFaq}">${idFaq}</td>
+                            <td class="text-truncate data-id" style="max-width: 200px;" data-id-faq="${idFaq2}">${idFaq}</td>
                             <td class="text-truncate data-pregunta" style="max-width: 200px;">${pregunta}</td>
                             <td class="text-truncate data-respuesta" style="max-width: 200px;">${respuesta}</td>
                             <td align="center">
@@ -162,11 +194,15 @@ $(document).ready(function () {
         // Extrae la información del FAQ desde los atributos de datos
         let idFaq = fila.find('.data-id').text();
         
+        // Obtener id de la base de datos
+        let idFaq2 = fila.find('.data-id').attr('data-id-faq');
+        
         let pregunta = fila.find('.data-pregunta').text();
         let respuesta = fila.find('.data-respuesta').text();
 
         // Almacena el ID en el atributo de datos de la modal
         $('#modal-1').attr('data-id-faq', idFaq);
+        $('#modal-1').attr('data-id-db', idFaq2);
 
         // Llena los campos del modal con la información del FAQ seleccionado
         $('#modal-1 input').val(pregunta);
@@ -204,13 +240,13 @@ $(document).ready(function () {
             if (result.isConfirmed) {
                 // Obtén la fila actual
                 let fila = $(this).closest('tr');
-                
-                // Obtén el ID del FAQ que deseas eliminar
-                let idFaq = fila.find('.data-id').text();
+
+                // Obtén el ID de la base de datos
+                let idFaq2 = fila.find('.data-id').attr('data-id-faq');
 
                 // Realiza la solicitud DELETE al servicio web
                 $.ajax({
-                    url: "http://paredes.myddns.me:5000/faq/" + idFaq, // Reemplaza con la URL y el ID del FAQ específico
+                    url: "http://paredes.myddns.me:5000/faq/" + idFaq2, // Reemplaza con la URL y el ID del FAQ específico
                     type: 'DELETE',
                     success: function (response) {
                         // Maneja la respuesta exitosa si es necesario
